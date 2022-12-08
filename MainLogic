@@ -1,0 +1,1399 @@
+//
+//  ContentView.swift
+//  cue tracker
+//
+//  Created by Man ho Chau on 21/11/2022.
+//
+
+import SwiftUI
+import UIKit
+
+struct Cardview: ViewModifier {
+    
+    var num: Int
+    
+    func body(content: Content) -> some View {
+        
+        if num == 0 {
+            ZStack{
+                content
+                    .frame(width: 108*3.4, height: 219*3.4)
+                    .position(x: 9999, y: 9999)
+                    .frame(width: 5*17, height: 7*17)
+                    .clipped()
+                Image("defaultCard")
+                    .resizable()
+                    .frame(width: 108*3.4, height: 219*3.4)
+                    .position(x: 178, y: 248)
+                    .frame(width: 5*17, height: 7*17)
+                    .clipped()
+            }
+        }
+        else if num == 1
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178, y: 248)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 2
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-90, y: 248)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 3
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-180, y: 248)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 4
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-270, y: 248)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 5
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178, y: 248-122)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 6
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-90, y: 248-122)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 7
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-180, y: 248-122)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 8
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-270, y: 248-122)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 9
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178, y: 248-242)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 10
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-90, y: 248-242)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 11
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-180, y: 248-242)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 12
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-270, y: 248-242)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 13
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178, y: 248-363)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 14
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-90, y: 248-363)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 15
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-180, y: 248-363)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 16
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-270, y: 248-363)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 17
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-90, y: 248-484)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        else if num == 18
+        {
+            content
+                .frame(width: 108*3.4, height: 219*3.4)
+                .position(x: 178-180, y: 248-484)
+                .frame(width: 5*17, height: 7*17)
+                .clipped()
+        }
+        
+    }
+}
+
+
+struct Selecting: ViewModifier {
+    
+    var num: Int
+    
+    func body(content: Content) -> some View {
+        
+        if num != 0 {
+            ZStack{
+                Text("")
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.center)
+                                .font(.largeTitle)
+                                .frame(width: 5*17, height: 7*17)
+                                .background(.gray)
+                                .border(Color.white)
+                                .opacity(0.5)
+                content
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.center)
+                    .font(.largeTitle)
+                    .frame(width: 5*17, height: 7*17)
+                
+            }
+        }
+        else
+        {
+            content
+                .hidden()
+        }
+    }
+}
+struct Watermark: ViewModifier {
+    
+    var text: String
+    
+    func body(content: Content) -> some View {
+        ZStack(alignment: .bottom){
+            content
+                Text(text)
+                .font(.footnote)
+                .foregroundColor(.white)
+                .padding(2)
+                .background(.gray)
+                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+        }
+            }
+}
+
+
+struct Cooldown: ViewModifier {
+    
+    var num: Int
+    
+    func body(content: Content) -> some View {
+        
+        if num != 0 {
+            ZStack{
+                Text("")
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.center)
+                                .font(.largeTitle)
+                                .frame(width: 5*17, height: 7*17)
+                                .background(.white)
+                                .border(Color.white)
+                                .opacity(0.5)
+                content
+                    .frame(width: 80, height: 80)
+                
+            }
+        }
+        else
+        {
+            content
+                .hidden()
+        }
+    }
+}
+
+extension View {
+    func cardNumber(with num: Int) -> some View{
+        modifier(Cardview(num: num))
+    }
+    func selecting(with num: Int) -> some View{
+        modifier(Selecting(num: num))
+    }
+    func cooldown(with num: Int) -> some View{
+        modifier(Cooldown(num: num))
+    }
+    
+    func watermark(with text: String)-> some View{
+        modifier(Watermark(text: text))
+    }
+}
+
+
+struct ContentView: View {
+    var img: Image
+   @State var turnCounter = 1
+   @State var turnCounter2 = 0
+   @State var roundCounter = 1
+   @State var pos = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+   @State var cooldownArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+   @State  var selectedAmount = 0
+   @State  var totalPlayedCard = 0
+   @State var scrollviewarray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+   @State var stillHave0 = true
+   @State var showAlert = false
+    @State var recordArrayScrollView: Array = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+    @State var recordArrayCooldown: Array = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+    @State var rewindAnimation = 1.0
+
+    @Environment(\.dismiss) private var dismiss
+    
+    //passing selected card ID in
+    func selectCard(int: Int) {
+        
+        if selectedAmount < 3 && (pos[int-1] == 0 &&
+            scrollviewarray[5] != int &&
+            scrollviewarray[6] != int &&
+            scrollviewarray[7] != int &&
+            scrollviewarray[8] != int &&
+            scrollviewarray[9] != int &&
+            scrollviewarray[10] != int &&
+            scrollviewarray[11] != int &&
+            scrollviewarray[12] != int &&
+            scrollviewarray[13] != int &&
+            scrollviewarray[14] != int &&
+            scrollviewarray[15] != int &&
+            scrollviewarray[16] != int &&
+            scrollviewarray[17] != int &&
+            cooldownArray[int-1] == 0
+        )
+            //if card is not 0 AND not 6-17 in scrollview, AND selectedamount < 3, AND cooldown = 0
+        {
+            selectedAmount += 1
+            pos[int-1] = selectedAmount
+            addCard(int: int)
+        }
+        else if (scrollviewarray[15] == int ||
+                    scrollviewarray[16] == int ||
+                    scrollviewarray[17] == int) &&
+                    cooldownArray[int-1] == 0
+        {
+            removeCard(int: int)
+        }
+        
+    }
+    
+    func playTurn(){
+        
+        if pos.contains(3){
+            totalPlayedCard += 3
+
+            for i in 0...17{
+                if cooldownArray[i] != 0 {
+                    cooldownArray[i] += 3
+                }
+
+            }
+            cooldownArray[pos.firstIndex(of: 1)!] += 3
+            cooldownArray[pos.firstIndex(of: 2)!] += 2
+            cooldownArray[pos.firstIndex(of: 3)!] += 1
+            
+            
+            
+            
+            
+            
+            
+        }
+        else if pos.contains(2){
+            totalPlayedCard += 2
+            for i in 0...17{
+                if cooldownArray[i] != 0 {
+                    cooldownArray[i] += 2
+                }
+
+            }
+            cooldownArray[pos.firstIndex(of: 1)!] += 2
+            cooldownArray[pos.firstIndex(of: 2)!] += 1
+            
+            
+            
+        }
+        else if pos.contains(1){
+            totalPlayedCard += 1
+            for i in 0...17{
+                if cooldownArray[i] != 0 {
+                    cooldownArray[i] += 1
+                }
+
+            }
+            cooldownArray[pos.firstIndex(of: 1)!] += 1
+            
+        }
+        for i in 0...17{
+            if cooldownArray[i] >= 14{
+                cooldownArray[i] = 0
+            }
+        }
+        
+        selectedAmount = 0
+        pos = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        if !scrollviewarray.contains(0){
+            stillHave0 = false
+        }
+        //reset^^^
+        
+        turnCount()
+    }
+    
+    func addCard(int: Int){
+        scrollviewarray.append(int)// add this cars to the last place of the array
+        
+        if scrollviewarray.firstIndex(of: int)! < 5{
+            scrollviewarray.remove(at: scrollviewarray.firstIndex(of: int)!)
+        }else if scrollviewarray[0] == 0{
+            scrollviewarray.remove(at: 0)
+        }
+    }
+    
+    func removeCard(int: Int){
+        var temp = 0
+        temp = pos[int-1]
+        pos[int-1] = 0 //unselect
+        for i in 0...17{
+            if pos[i] > 0 && pos[i] > temp{
+                pos[i] -= 1
+            }
+        }// decrease all other selected card by 1, only if pos[i] > selected
+        selectedAmount -= 1 // decrease the selected amount by 1
+        scrollviewarray.remove(at: scrollviewarray.lastIndex(of: int)!)
+        if stillHave0{
+            scrollviewarray.insert(0, at: 0)
+        }else
+        {scrollviewarray.insert(int, at: 0)}
+    }
+    
+    func record(int: Int){
+        
+        recordArrayCooldown.append(cooldownArray)
+        recordArrayScrollView.append(scrollviewarray)
+        
+    }
+    
+    func restore(){
+        let size = recordArrayCooldown.count
+        
+        if turnCounter2 > 0{
+            
+            scrollviewarray = recordArrayScrollView[size-2]
+            cooldownArray = recordArrayCooldown[size-2]
+            
+            
+            recordArrayCooldown.removeLast()
+            recordArrayScrollView.removeLast()
+            turnCounter2 -= 1
+            
+            if roundCounter > 1 && turnCounter == 1{
+                roundCounter -= 1
+            }
+            if turnCounter > 1{
+                turnCounter -= 1
+            }else if turnCounter == 1{
+                turnCounter = 3
+            }
+        }
+    }
+
+    func turnCount(){
+        
+        if turnCounter == 3{
+            turnCounter = 0
+            roundCounter += 1
+        }
+        
+        turnCounter += 1
+        record(int: turnCounter2)
+        turnCounter2 += 1
+    }
+    
+    var body: some View {
+    
+        ZStack{
+            Image("skybackground")
+                .resizable(resizingMode: .stretch)
+                .ignoresSafeArea()
+            VStack{
+                Image("banner")
+                    .resizable()
+                    .frame(width: 300, height: 30)
+                ScrollView(.horizontal, showsIndicators: true) {
+                    HStack{
+                        Group{
+                        img
+                            .resizable()
+                            .cardNumber(with: Int(scrollviewarray[0]))
+            
+                        img
+                            .resizable()
+                            .cardNumber(with: Int(scrollviewarray[1]))
+                        img
+                            .resizable()
+                            .cardNumber(with: Int(scrollviewarray[2]))
+                        img
+                            .resizable()
+                            .cardNumber(with: Int(scrollviewarray[3]))
+                        img
+                            .resizable()
+                            .cardNumber(with: Int(scrollviewarray[4]))
+                        
+                            VStack {
+                                Image("leftArrow")
+                                    .resizable()
+                                    .frame(width: 5*10, height: 7*3)
+                                Image("cardsInHand")
+                                .resizable()
+                                .frame(width: 5*10, height: 7*10)
+                                .background(.white)
+                            .opacity(0.9)
+                                
+                            }
+                            
+                            ZStack(alignment: .bottom) {
+                                img
+                                .resizable()
+                            .cardNumber(with: Int(scrollviewarray[5]))
+                            .watermark(with: "1")
+                            }
+                        img
+                            .resizable()
+                            .cardNumber(with: Int(scrollviewarray[6]))
+                            .watermark(with: "2")
+                        img
+                            .resizable()
+                            .cardNumber(with: Int(scrollviewarray[7]))
+                            .watermark(with: "3")
+                        }
+                        Group{
+                            img
+                            .resizable()
+                            .cardNumber(with: Int(scrollviewarray[8]))
+                            .watermark(with: "4")
+                        img
+                            .resizable()
+                            .cardNumber(with: Int(scrollviewarray[9]))
+                            .watermark(with: "5")
+                    
+                        
+                            img
+                                .resizable()
+                                .cardNumber(with: Int(scrollviewarray[10]))
+                                .watermark(with: "6")
+                            img
+                                .resizable()
+                                .cardNumber(with: Int(scrollviewarray[11]))
+                                .watermark(with: "7")
+                            img
+                                .resizable()
+                                .cardNumber(with: Int(scrollviewarray[12]))
+                                .watermark(with: "8")
+                            img
+                                .resizable()
+                                .cardNumber(with: Int(scrollviewarray[13]))
+                                .watermark(with: "9")
+                            img
+                                .resizable()
+                                .cardNumber(with: Int(scrollviewarray[14]))
+                                .watermark(with: "10")
+                            img
+                                .resizable()
+                                .cardNumber(with: Int(scrollviewarray[15]))
+                                .watermark(with: "11")
+                            img
+                                .resizable()
+                                .cardNumber(with: Int(scrollviewarray[16]))
+                                .watermark(with: "12")
+                            img
+                                .resizable()
+                                .cardNumber(with: Int(scrollviewarray[17]))
+                                .watermark(with: "13")
+                        }
+                    }
+                    
+                }.frame(height: 219*0.53)
+                .zIndex(1)//scrollview
+                HStack{
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                                                                    Text("Round \(roundCounter) Turn \(turnCounter)")
+                                                                        .font(.title2)
+                                                                        .fontWeight(.heavy)
+                                                                        .foregroundColor(Color.white)
+                                                                        .multilineTextAlignment(.center)
+                                                                        .padding(/*@START_MENU_TOKEN@*/.horizontal, 50.0/*@END_MENU_TOKEN@*/)
+                                                                        .padding(.vertical, 5.0)
+                                                                        .border(Color.yellow, width: 4)
+                                                                        .cornerRadius(5.0)
+                                                                        
+                                                                        .animation(.interpolatingSpring(mass: 1, stiffness: 50, damping: 100, initialVelocity: 100), value: turnCounter2)
+                                                                    Spacer()
+                    Button(action: {
+                        showAlert.toggle()
+                    },
+                           label: {
+                        Text("Quit")
+                            .font(.title2)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 10.0)
+                            .padding(.vertical, 5)
+                            .border(Color.gray, width: 4)
+                            .cornerRadius(5.0)
+                            .alert("Exit game?", isPresented: $showAlert) {
+                                Button {
+                                    dismiss()
+                                    //go back to home page
+                                } label: {
+                                    Text("Exit")
+                                }
+                                Button {
+                                    
+                                } label: {
+                                    Text("Cancel")
+                                }
+                            } message: {
+                                Text("Your progress will not be saved")
+                            }
+                        
+                            }
+                    )
+                                                                }//Counter bar
+                HStack{
+                    Button(action: {selectCard(int: 1)}, label: {
+                        ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 1))
+                            if cooldownArray[0] != 0
+                            {Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                                
+                                Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[0]))
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .clipped()
+                                
+                            }
+                            if pos[0] != 0
+                            {
+                                Text("\(pos[0])")
+                                    .modifier(Selecting(num: selectedAmount))
+                            }
+                        }
+                        }
+                    )
+                    
+                    Button(action: {selectCard(int: 2)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 2))
+                        if cooldownArray[1] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[1]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[1] != 0{
+                            Text("\(pos[1])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 3)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 3))
+                        if cooldownArray[2] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[2]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[2] != 0{
+                            Text("\(pos[2])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 4)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 4))
+                        if cooldownArray[3] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[3]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[3] != 0 {
+                            Text("\(pos[3])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                        }
+                                                                                }
+                                                                                )
+                }
+                HStack{
+                    Button(action: {selectCard(int: 5); }, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 5))
+                        if cooldownArray[4] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[4]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[4] != 0 {
+                            Text("\(pos[4])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 6)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 6))
+                        if cooldownArray[5] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[5]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[5] != 0  {
+                            Text("\(pos[5])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 7)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 7))
+                        if cooldownArray[6] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[6]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[6] != 0  {
+                            Text("\(pos[6])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 8)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 8))
+                        if cooldownArray[7] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[7]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                            
+                        if pos[7] != 0  {
+                            Text("\(pos[7])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                }
+                HStack{
+                    Button(action: {selectCard(int: 9)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 9))
+                        if cooldownArray[8] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[8]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[8] != 0  {
+                            Text("\(pos[8])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 10)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 10))
+                        if cooldownArray[9] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[9]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[9] != 0  {
+                            Text("\(pos[9])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 11)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 11))
+                        if cooldownArray[10] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[10]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[10] != 0  {
+                            Text("\(pos[10])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 12)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 12))
+                        if cooldownArray[11] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[11]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[11] != 0  {
+                            Text("\(pos[11])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                }
+                HStack{
+                    Button(action: {selectCard(int: 13)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 13))
+                        if cooldownArray[12] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[12]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[12] != 0  {
+                            Text("\(pos[12])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 14)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 14))
+                        if cooldownArray[13] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[13]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[13] != 0  {
+                            Text("\(pos[13])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 15)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 15))
+                        if cooldownArray[14] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[14]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[14] != 0  {
+                            Text("\(pos[14])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 16)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 16))
+                        if cooldownArray[15] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[15]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[15] != 0  {
+                            Text("\(pos[15])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                }
+                HStack{
+                    Button(action: {restore()
+                        rewindAnimation -= 1
+                    }, label: { Image("back")
+                            .resizable()
+                            .frame(width: 100.0, height: 100.0)
+                            .rotationEffect(.degrees(rewindAnimation*360))
+                            .animation(.easeIn, value: rewindAnimation*360)
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 17)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 17))
+                        if cooldownArray[16] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[16]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[16] != 0  {
+                            Text("\(pos[16])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {selectCard(int: 18)}, label: {ZStack{
+                            img
+                                .resizable()
+                                .modifier(Cardview(num: 18))
+                        if cooldownArray[17] != 0
+                        {  Text("")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .font(.largeTitle)
+                                    .frame(width: 5*17, height: 7*17)
+                                    .background(.black)
+                                    .border(Color.white)
+                                    .opacity(0.5)
+                               Image("cooldown" + String(cooldownArray[17]))
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        }
+                        if pos[17] != 0  {
+                            Text("\(pos[17])")
+                                .modifier(Selecting(num: selectedAmount))
+                        }
+                                                   
+                        }
+                                                                                }
+                                                                                )
+                    Button(action: {playTurn()}, label: { Image("play")
+                            .resizable()
+                            .frame(width: 100.0, height: 100.0)
+                            
+                                                                                }
+                                                                                )
+                }
+
+
+                //bottom
+           Spacer()
+        //    .navigationBarBackButtonHidden(true)
+      //      .navigationBarHidden(true)
+            }
+        }
+   
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+   //     ContentView(img:Image("test"))
+              HomePage()
+    }
+}
+
+struct HomePage: View {
+    @State var showingPicker = false
+    @State var showingContent = false
+    @State var selectedImage: UIImage?
+    
+    
+    var body: some View {
+        NavigationView{
+            
+            ZStack{
+                Image("skybackground")
+                    .resizable(resizingMode: .stretch)
+                    .ignoresSafeArea()
+                    .opacity(1.0)
+                
+                VStack{
+                    Spacer()
+                    Image("logo")
+                    Text("CUE Tracker")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.purple)
+                        .cornerRadius(5.0)
+                    Spacer()
+                    NavigationLink(destination: ZStack{
+                        
+                        Image("skybackground")
+                            .resizable(resizingMode: .stretch)
+                            .ignoresSafeArea()
+                            .opacity(1.0)
+                        
+                        VStack {
+                            Spacer()
+                            if selectedImage != nil{
+                                HStack{
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 1))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 2))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 3))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 4))
+                                }
+                                HStack{
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 5))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 6))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 7))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 8))
+                                }
+                                HStack{
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 9))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 10))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 11))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 12))
+                                }
+                                HStack{
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 13))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 14))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 15))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 16))
+                                }
+                                HStack{
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 17))
+                                    Image(uiImage: selectedImage!)
+                                        .resizable()
+                                        .modifier(Cardview(num: 18))
+                                }
+                            }else{
+                                
+                                Spacer()
+                                    GifImage("arrow")
+                                    .frame(height: 480)
+                        
+                            }
+                            
+                            
+                            
+                            HStack{
+                                
+                                Button {
+                                    showingPicker = true
+                                } label: {Text("Select a photo")
+                                        .font(.title2)
+                                        .fontWeight(.heavy)
+                                        .foregroundColor(Color.white)
+                                        .padding(/*@START_MENU_TOKEN@*/.all, 20.0/*@END_MENU_TOKEN@*/)
+                                        .border(Color.white, width: 5)
+                                        .cornerRadius(5.0)
+                                }
+                                if (selectedImage != nil){
+                                    NavigationLink{
+                                      ContentView(img:Image(uiImage: selectedImage!))
+                                        .navigationBarHidden(true)
+                                        
+                                   //     ContentView(img:Image("test"))
+                                        
+                                    } label: {
+                                        Text("Confirm").font(.title2)
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(Color.white)
+                                            .padding(/*@START_MENU_TOKEN@*/.all, 20.0/*@END_MENU_TOKEN@*/)
+                                            .border(Color.white, width: 5)
+                                            .cornerRadius(5.0)
+                                    }
+                                        
+                                    
+                                }
+                            }
+                        }
+                        
+                    }
+                        .sheet(isPresented: $showingPicker, onDismiss: nil) {
+                        //Image picker
+                        ImagePicker(selectedImage: $selectedImage, showingPicker: $showingPicker)
+                    }, label: {
+                        Text("Start")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .foregroundColor(Color.white)
+                            .padding(/*@START_MENU_TOKEN@*/.all, 20.0/*@END_MENU_TOKEN@*/)
+                            .border(Color.white, width: 5)
+                            .cornerRadius(5.0)
+                    }
+                    )
+                 //How to use VVV
+                    NavigationLink(destination:
+                                    TabView{
+                        Text("page1")
+                        Text("page2")
+                        ZStack{
+                            Image("skybackground")
+                                .resizable(resizingMode: .stretch)
+                                .ignoresSafeArea()
+                                .opacity(1.0)
+                            Image("logo")}}.tabViewStyle(.page).indexViewStyle(.page(backgroundDisplayMode: .always)), label: {
+                        Text("How to use")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .foregroundColor(Color.white)
+                            .padding(/*@START_MENU_TOKEN@*/.all, 20.0/*@END_MENU_TOKEN@*/)
+                            .border(Color.white, width: 5)
+                            .cornerRadius(5.0)
+                    }
+                    )
+                    //Credits vvvvv
+                    NavigationLink(destination: ZStack{
+                        Image("skybackground")
+                            .resizable(resizingMode: .stretch)
+                            .ignoresSafeArea()
+                            .opacity(1.0)
+                        VStack{
+                            ScrollView(.vertical, showsIndicators: true) {
+                                Group{
+                                    Text("App fully built by:")
+                                    Text("Manhoo")
+                                    Text("")
+                                    Text("")
+                                }
+                                Group{
+                                    
+                                    Text("      Thank you for using this app and supporting new developers.")
+                                    Text("")
+                                    Text("")
+                                    Text("")
+                                    
+                                }
+                                Group{
+                                    Text("Special thanks to two youtube channels: ")
+                                    Text("@twostraws @CodeWithChris")
+                                    Text("They provided great Swift (IOS app coding language) tutorials.")
+                                    Text("")
+                                    Text("")
+                                    Text("")
+                                    Text("")
+                                    Text("")
+                                    Text("")
+                                    Text("")
+                                }
+                            }.foregroundColor(.black)
+                                .background(Color(hue: 0.553, saturation: 0.147, brightness: 0.665))
+                                .cornerRadius(12)
+                            
+                            Link(destination: URL(string:"https://paypal.me/coff3eechau")!) {
+                                Text("Donate to the developer")
+                                    .bold()
+                                    .frame(width: 280, height: 50)
+                                    .foregroundColor(.black)
+                                    .background(Color.white)
+                                    .cornerRadius(12)
+                                    .border(Color.blue)
+                            }
+                        }
+                        
+                    }, label: {
+                        Text("Credits")
+                            .font(.title3)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.gray)
+                            .padding(/*@START_MENU_TOKEN@*/.all, 20.0/*@END_MENU_TOKEN@*/)
+                            .border(Color.white, width: 2)
+                            .cornerRadius(5.0)
+                    }
+                    )
+                
+                    
+                    Spacer()
+                }
+            }
+        }
+    }
+}
