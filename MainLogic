@@ -8,6 +8,44 @@
 import SwiftUI
 import UIKit
 
+struct TextShimmer: View {
+    @State var animationtext = false
+    var text: String
+    var body: some View{
+        ZStack{
+            Text(text)
+                .font(.system(size: 20, weight:    .bold))
+                .foregroundColor(Color.white.opacity(0.85))
+            //multicolour text..
+            HStack(spacing: 0){
+                
+                ForEach(0..<text.count,id: \.self){
+                    index in
+                    Text(String(text[text.index(text.startIndex, offsetBy: index)]))
+                        .font(.system(size: 20, weight:    .bold))
+                        .foregroundColor(randomColor())
+                }
+            }.mask(
+                Rectangle()
+                    .fill(LinearGradient(gradient: .init(colors: [Color.white.opacity(0.5),Color.white,Color.white.opacity(0.5)]), startPoint: .top, endPoint: .bottom))
+                    .rotationEffect(.init(degrees: 70))
+                    .offset(x:-250)
+                   .offset(x: animationtext ? 500 : 0)
+                   .onAppear{
+                       animationtext = true
+                   }.animation(Animation.linear(duration: 1).repeatForever(autoreverses: true), value: animationtext)
+                   
+            )
+        }//.animation(Animation.linear(duration: 1).repeatForever(autoreverses: true), value: animationtext)
+       
+    }
+    // random colour
+    func randomColor() -> Color {
+        let color = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
+        return Color(color)
+    }
+}
+
 struct Cardview: ViewModifier {
     
     var num: Int
@@ -17,15 +55,15 @@ struct Cardview: ViewModifier {
         if num == 0 {
             ZStack{
                 content
-                    .frame(width: 108*3.4, height: 219*3.4)
+                    .frame(width: 1, height: 1)
                     .position(x: 9999, y: 9999)
-                    .frame(width: 5*17, height: 7*17)
+                    .frame(width: 1, height: 1)
                     .clipped()
                 Image("defaultCard")
                     .resizable()
-                    .frame(width: 108*3.4, height: 219*3.4)
-                    .position(x: 178, y: 248)
-                    .frame(width: 5*17, height: 7*17)
+                    .frame(width: 108*1.9, height: 219*1.9)
+                    .position(x: 100, y: 140)
+                    .frame(width: 5*10, height: 7*9.7)
                     .clipped()
             }
         }
@@ -176,7 +214,174 @@ struct Cardview: ViewModifier {
         
     }
 }
-
+struct Cardview2: ViewModifier {
+    
+    var num: Int
+    
+    func body(content: Content) -> some View {
+        
+        if num == 0 {
+            ZStack{
+                content
+                    .frame(width: 1, height: 1)
+                    .position(x: 9999, y: 9999)
+                    .frame(width: 1, height: 1)
+                    .clipped()
+                Image("defaultCard")
+                    .resizable()
+                    .frame(width: 108*1.9, height: 219*1.9)
+                    .position(x: 101, y: 139)
+                    .frame(width: 5*10, height: 7*9.7)
+                    .clipped()
+            }
+        }
+        else if num == 1
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101, y: 139)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 2
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-52, y: 139)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 3
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-100, y: 139)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 4
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-150, y: 139)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 5
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101, y: 139-68)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 6
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-50, y: 139-68)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 7
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-100, y: 139-68)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 8
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-150, y: 139-68)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 9
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101, y: 139-135)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 10
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-50, y: 139-135)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 11
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-100, y: 139-135)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 12
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-150, y: 139-135)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 13
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101, y: 139-202)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 14
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-50, y: 139-202)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 15
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-100, y: 139-202)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 16
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-150, y: 139-202)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 17
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-52, y: 139-270)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        else if num == 18
+        {
+            content
+                .frame(width: 108*1.9, height: 219*1.9)
+                .position(x: 101-100, y: 139-270)
+                .frame(width: 5*10, height: 7*9.7)
+                .clipped()
+        }
+        
+    }
+}
 
 struct Selecting: ViewModifier {
     
@@ -196,7 +401,7 @@ struct Selecting: ViewModifier {
                                 .border(Color.white)
                                 .opacity(0.5)
                 content
-                    .fontWeight(.bold)
+               //     .fontWeight(.bold) 'fontWeight' is only available in iOS 16.0 or newer
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
                     .font(.largeTitle)
@@ -263,6 +468,9 @@ extension View {
     func cardNumber(with num: Int) -> some View{
         modifier(Cardview(num: num))
     }
+    func cardNumber2(with num: Int) -> some View{
+        modifier(Cardview2(num: num))
+    }
     func selecting(with num: Int) -> some View{
         modifier(Selecting(num: num))
     }
@@ -283,6 +491,7 @@ struct ContentView: View {
    @State var roundCounter = 1
    @State var pos = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
    @State var cooldownArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+   @State var nextCardViewArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
    @State  var selectedAmount = 0
    @State  var totalPlayedCard = 0
    @State var scrollviewarray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -327,6 +536,18 @@ struct ContentView: View {
             removeCard(int: int)
         }
         
+        
+            for i in 0...17{
+                if cooldownArray[i] + selectedAmount > 13 {
+                    nextCardViewArray[i] = 1
+                }else{
+                    nextCardViewArray[i] = 0
+                }
+
+            }
+        
+        
+       
     }
     
     func playTurn(){
@@ -343,13 +564,7 @@ struct ContentView: View {
             cooldownArray[pos.firstIndex(of: 1)!] += 3
             cooldownArray[pos.firstIndex(of: 2)!] += 2
             cooldownArray[pos.firstIndex(of: 3)!] += 1
-            
-            
-            
-            
-            
-            
-            
+   
         }
         else if pos.contains(2){
             totalPlayedCard += 2
@@ -447,7 +662,14 @@ struct ContentView: View {
             }else if turnCounter == 1{
                 turnCounter = 3
             }
+            if selectedAmount > 0{
+                pos = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+                selectedAmount = 0
+            }
+            nextCardViewArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         }
+        
+        
     }
 
     func turnCount(){
@@ -469,103 +691,106 @@ struct ContentView: View {
                 .resizable(resizingMode: .stretch)
                 .ignoresSafeArea()
             VStack{
-                Image("banner")
+               Image("banner")
                     .resizable()
                     .frame(width: 300, height: 30)
                 ScrollView(.horizontal, showsIndicators: true) {
                     HStack{
                         Group{
-                        img
-                            .resizable()
-                            .cardNumber(with: Int(scrollviewarray[0]))
-            
-                        img
-                            .resizable()
-                            .cardNumber(with: Int(scrollviewarray[1]))
-                        img
-                            .resizable()
-                            .cardNumber(with: Int(scrollviewarray[2]))
-                        img
-                            .resizable()
-                            .cardNumber(with: Int(scrollviewarray[3]))
-                        img
-                            .resizable()
-                            .cardNumber(with: Int(scrollviewarray[4]))
-                        
+                            img
+                                .resizable()
+                                .cardNumber2(with: Int(scrollviewarray[0]))
+                            img
+                                .resizable()
+                                .cardNumber2(with: Int(scrollviewarray[1]))
+                            img
+                                .resizable()
+                                .cardNumber2(with: Int(scrollviewarray[2]))
+                                
+                            img
+                                .resizable()
+                                .cardNumber2(with: Int(scrollviewarray[3]))
+                                
+                            img
+                                .resizable()
+                                .cardNumber2(with: Int(scrollviewarray[4]))
+                                
+                        }
+                        Group{
                             VStack {
                                 Image("leftArrow")
                                     .resizable()
-                                    .frame(width: 5*10, height: 7*3)
+                                    .frame(width: 5*10, height: 7*1)
                                 Image("cardsInHand")
-                                .resizable()
-                                .frame(width: 5*10, height: 7*10)
-                                .background(.white)
-                            .opacity(0.9)
+                                    .resizable()
+                                    .frame(width: 5*10, height: 7*7)
+                                    .background(.white)
+                                    .opacity(0.9)
                                 
                             }
-                            
-                            ZStack(alignment: .bottom) {
-                                img
-                                .resizable()
-                            .cardNumber(with: Int(scrollviewarray[5]))
-                            .watermark(with: "1")
-                            }
-                        img
-                            .resizable()
-                            .cardNumber(with: Int(scrollviewarray[6]))
-                            .watermark(with: "2")
-                        img
-                            .resizable()
-                            .cardNumber(with: Int(scrollviewarray[7]))
-                            .watermark(with: "3")
                         }
+                        Group{
+                        ZStack(alignment: .bottom) {
+                            img
+                            .resizable()
+                        .cardNumber2(with: Int(scrollviewarray[5]))
+                        .watermark(with: "1")
+                        }
+                    img
+                        .resizable()
+                        .cardNumber2(with: Int(scrollviewarray[6]))
+                        .watermark(with: "2")
+                    img
+                        .resizable()
+                        .cardNumber2(with: Int(scrollviewarray[7]))
+                        .watermark(with: "3")
+                    }
                         Group{
                             img
                             .resizable()
-                            .cardNumber(with: Int(scrollviewarray[8]))
+                            .cardNumber2(with: Int(scrollviewarray[8]))
                             .watermark(with: "4")
                         img
                             .resizable()
-                            .cardNumber(with: Int(scrollviewarray[9]))
+                            .cardNumber2(with: Int(scrollviewarray[9]))
                             .watermark(with: "5")
                     
                         
                             img
                                 .resizable()
-                                .cardNumber(with: Int(scrollviewarray[10]))
+                                .cardNumber2(with: Int(scrollviewarray[10]))
                                 .watermark(with: "6")
                             img
                                 .resizable()
-                                .cardNumber(with: Int(scrollviewarray[11]))
+                                .cardNumber2(with: Int(scrollviewarray[11]))
                                 .watermark(with: "7")
                             img
                                 .resizable()
-                                .cardNumber(with: Int(scrollviewarray[12]))
+                                .cardNumber2(with: Int(scrollviewarray[12]))
                                 .watermark(with: "8")
                             img
                                 .resizable()
-                                .cardNumber(with: Int(scrollviewarray[13]))
+                                .cardNumber2(with: Int(scrollviewarray[13]))
                                 .watermark(with: "9")
                             img
                                 .resizable()
-                                .cardNumber(with: Int(scrollviewarray[14]))
+                                .cardNumber2(with: Int(scrollviewarray[14]))
                                 .watermark(with: "10")
                             img
                                 .resizable()
-                                .cardNumber(with: Int(scrollviewarray[15]))
+                                .cardNumber2(with: Int(scrollviewarray[15]))
                                 .watermark(with: "11")
                             img
                                 .resizable()
-                                .cardNumber(with: Int(scrollviewarray[16]))
+                                .cardNumber2(with: Int(scrollviewarray[16]))
                                 .watermark(with: "12")
                             img
                                 .resizable()
-                                .cardNumber(with: Int(scrollviewarray[17]))
+                                .cardNumber2(with: Int(scrollviewarray[17]))
                                 .watermark(with: "13")
                         }
                     }
-                    
-                }.frame(height: 219*0.53)
+                }.frame(height: 219*0.25)
                 .zIndex(1)//scrollview
                 HStack{
                     Spacer()
@@ -615,11 +840,14 @@ struct ContentView: View {
                     )
                                                                 }//Counter bar
                 HStack{
-                    Button(action: {selectCard(int: 1)}, label: {
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int: 1)
+                    }}, label: {
                         ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 1))
+                            
                             if cooldownArray[0] != 0
                             {Text("")
                                     .fontWeight(.bold)
@@ -644,6 +872,12 @@ struct ContentView: View {
                                     .resizable()
                                     .frame(width: 80, height: 80)
                                     .clipped()
+                                if nextCardViewArray[0] == 1{
+                                    VStack{
+                                        TextShimmer(text: "Next")
+                                        TextShimmer(text: "Draw")
+                                    }
+                                }
                                 
                             }
                             if pos[0] != 0
@@ -655,7 +889,8 @@ struct ContentView: View {
                         }
                     )
                     
-                    Button(action: {selectCard(int: 2)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:2)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 2))
@@ -673,6 +908,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[1] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[1] != 0{
                             Text("\(pos[1])")
@@ -681,7 +922,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 3)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:3)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 3))
@@ -699,6 +941,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[2] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[2] != 0{
                             Text("\(pos[2])")
@@ -707,7 +955,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 4)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:4)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 4))
@@ -725,6 +974,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[3] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[3] != 0 {
                             Text("\(pos[3])")
@@ -735,7 +990,8 @@ struct ContentView: View {
                                                                                 )
                 }
                 HStack{
-                    Button(action: {selectCard(int: 5); }, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:5); }}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 5))
@@ -753,6 +1009,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[4] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[4] != 0 {
                             Text("\(pos[4])")
@@ -762,7 +1024,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 6)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:6)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 6))
@@ -780,6 +1043,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[5] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[5] != 0  {
                             Text("\(pos[5])")
@@ -789,7 +1058,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 7)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:7)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 7))
@@ -807,6 +1077,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[6] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[6] != 0  {
                             Text("\(pos[6])")
@@ -816,7 +1092,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 8)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:8)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 8))
@@ -834,6 +1111,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[7] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                             
                         if pos[7] != 0  {
@@ -846,7 +1129,8 @@ struct ContentView: View {
                                                                                 )
                 }
                 HStack{
-                    Button(action: {selectCard(int: 9)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:9)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 9))
@@ -864,6 +1148,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[8] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[8] != 0  {
                             Text("\(pos[8])")
@@ -873,7 +1163,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 10)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:10)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 10))
@@ -891,6 +1182,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[9] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[9] != 0  {
                             Text("\(pos[9])")
@@ -900,7 +1197,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 11)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:11)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 11))
@@ -918,6 +1216,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[10] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[10] != 0  {
                             Text("\(pos[10])")
@@ -927,7 +1231,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 12)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:12)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 12))
@@ -945,6 +1250,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[11] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[11] != 0  {
                             Text("\(pos[11])")
@@ -956,7 +1267,8 @@ struct ContentView: View {
                                                                                 )
                 }
                 HStack{
-                    Button(action: {selectCard(int: 13)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:13)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 13))
@@ -974,6 +1286,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[12] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[12] != 0  {
                             Text("\(pos[12])")
@@ -983,7 +1301,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 14)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:14)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 14))
@@ -1001,6 +1320,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[13] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[13] != 0  {
                             Text("\(pos[13])")
@@ -1010,7 +1335,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 15)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:15)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 15))
@@ -1028,6 +1354,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[14] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[14] != 0  {
                             Text("\(pos[14])")
@@ -1037,7 +1369,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 16)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:16)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 16))
@@ -1055,6 +1388,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[15] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[15] != 0  {
                             Text("\(pos[15])")
@@ -1066,7 +1405,9 @@ struct ContentView: View {
                                                                                 )
                 }
                 HStack{
-                    Button(action: {restore()
+                    Button(action: {
+                        withAnimation(.default){
+                            restore()}
                         rewindAnimation -= 1
                     }, label: { Image("back")
                             .resizable()
@@ -1075,7 +1416,8 @@ struct ContentView: View {
                             .animation(.easeIn, value: rewindAnimation*360)
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 17)}, label: {ZStack{
+                    Button(action: {withAnimation(.default) {
+                        selectCard(int:17)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 17))
@@ -1093,6 +1435,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[16] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[16] != 0  {
                             Text("\(pos[16])")
@@ -1102,7 +1450,8 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {selectCard(int: 18)}, label: {ZStack{
+                        Button(action: {withAnimation(.default) {
+                            selectCard(int:18)}}, label: {ZStack{
                             img
                                 .resizable()
                                 .modifier(Cardview(num: 18))
@@ -1120,6 +1469,12 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80)
                                 .clipped()
+                            if nextCardViewArray[17] == 1{
+                                VStack{
+                                    TextShimmer(text: "Next")
+                                    TextShimmer(text: "Draw")
+                                }
+                            }
                         }
                         if pos[17] != 0  {
                             Text("\(pos[17])")
@@ -1129,7 +1484,11 @@ struct ContentView: View {
                         }
                                                                                 }
                                                                                 )
-                    Button(action: {playTurn()}, label: { Image("play")
+                    Button(action: {
+                        withAnimation(.default){
+                            playTurn()
+                        }
+                    }, label: { Image("play")
                             .resizable()
                             .frame(width: 100.0, height: 100.0)
                             
@@ -1150,7 +1509,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-   //     ContentView(img:Image("test"))
+      //  ContentView(img:Image("origin"))
               HomePage()
     }
 }
@@ -1258,11 +1617,7 @@ struct HomePage: View {
                                 Spacer()
                                     GifImage("arrow")
                                     .frame(height: 480)
-                        
                             }
-                            
-                            
-                            
                             HStack{
                                 
                                 Button {
@@ -1277,10 +1632,10 @@ struct HomePage: View {
                                 }
                                 if (selectedImage != nil){
                                     NavigationLink{
-                                      ContentView(img:Image(uiImage: selectedImage!))
-                                        .navigationBarHidden(true)
+                                      ContentView(img:Image(uiImage: selectedImage!)).navigationBarHidden(true)
+                                      //cause changing items while animating can result in a corrupted navigation bar, but I guess that is what I wanted...
                                         
-                                   //     ContentView(img:Image("test"))
+                               //        ContentView(img:Image("origin"))
                                         
                                     } label: {
                                         Text("Confirm").font(.title2)
@@ -1313,14 +1668,249 @@ struct HomePage: View {
                  //How to use VVV
                     NavigationLink(destination:
                                     TabView{
-                        Text("page1")
-                        Text("page2")
+                        ///How to play
                         ZStack{
                             Image("skybackground")
                                 .resizable(resizingMode: .stretch)
                                 .ignoresSafeArea()
+                            VStack{
+                                ZStack{
+                                    Image("sample")
+                                        .resizable()
+                                        .frame(width: 200, height:400)
+                                        .aspectRatio(contentMode: .fit)
+                                        .rotationEffect(Angle(degrees: 18))
+                                        .scaledToFit()
+                                        .position(x: 300, y: 200)
+                                        .clipped()
+                                    GifImage("playdemo")
+                                        .frame(width: 200, height: 600)
+                                        .position(x: 120, y: 420)
+                                        .rotationEffect(Angle(degrees: -4))
+                                        .cornerRadius(10)
+                                        .clipped()
+                                    VStack{
+                                        Spacer()
+                                        Spacer()
+                                        Spacer()
+                                        Spacer()
+                                        Text("Track your played cards!")
+                                            .font(.title)
+                                            .fontWeight(.bold)
+                                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                            .frame(width: 380, height: 5)
+                                            .foregroundColor(.white)
+                                        Text("Played cards will go to the end of the deck. By tracking and logging your played cards, you can predict your upcoming draw!")
+                                            .multilineTextAlignment(.center)
+                                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                            .frame(width: 380, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
+                                            .foregroundColor(.white)
+                                        Spacer()
+                                        
+                                    }
+                                    
+                                    
+                                }
+                                
+                                
+                            }
+                            
+                           
+                        }//page 1
+                        ZStack{
+                            Image("skybackground")
+                                .resizable(resizingMode: .stretch)
+                            VStack{
+                                HStack{
+                                    Image("htu1")
+                                        .resizable()
+                                        .frame(width: 200, height:400)
+                                    Image("htu2")
+                                        .resizable()
+                                        .frame(width: 200, height:400)
+                                }
+                                
+                                ZStack{
+                                    Image("htu3")
+                                        .resizable()
+                                        .frame(width: 200, height:400)
+                                    Text("In your game app, generate your deck image and save it to your album!")
+                                        .font(.title3)
+                                        .fontWeight(.heavy)
+                                        .multilineTextAlignment(.center)
+                                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                        .frame(width: 380, height: 110)
+                                        .foregroundColor(.white)
+                                        .background(.gray)
+                                        .cornerRadius(50)
+                                    
+                                    
+                                }
+                                
+                            }
+                                }//page 2
+                        ZStack{
+                            Image("skybackground")
+                                .resizable(resizingMode: .stretch)
+                                .edgesIgnoringSafeArea(.all)
                                 .opacity(1.0)
-                            Image("logo")}}.tabViewStyle(.page).indexViewStyle(.page(backgroundDisplayMode: .always)), label: {
+                            VStack{
+                                ZStack{
+                                    
+                                    Image("htu4")
+                                        .resizable()
+                                        .frame(width: 300, height:600)
+                                    Image("origin")
+                                        .resizable()
+                                        .frame(width: 150, height:300)
+                                        .rotationEffect(Angle(degrees: -4))
+                                    
+                                    
+                                }
+                                Text("Load up your deck image to this app!")
+                                    .font(.title3)
+                                    .fontWeight(.heavy)
+                                    .multilineTextAlignment(.center)
+                                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 380, height: 90)
+                                    .foregroundColor(.white)
+                                    .background(.gray)
+                                    .cornerRadius(50)
+                            }
+                            
+                            
+                            
+                            
+                            
+                        }//page 3
+                       
+                        ZStack{
+                            Image("skybackground")
+                                .resizable(resizingMode: .stretch)
+                                .edgesIgnoringSafeArea(.all)
+                                .opacity(1.0)
+                            Image("body")
+                                .resizable()
+                                .frame(width: 200, height:400)
+                            VStack{
+                                Text("")
+                                Text("")
+                                Text("")
+                                HStack{
+                                    Image(systemName: "hand.tap.fill").imageScale(.large)
+                                        .foregroundColor(.white)
+                                    Text("Select your played card for the turn")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                        .frame(width: 300, height: 120)
+                                        .foregroundColor(.white)
+                                        .rotationEffect(Angle(degrees: -4))
+                                    Image(systemName: "hand.tap.fill").imageScale(.large)
+                                        .foregroundColor(.white)
+                                }
+                                Spacer()
+
+                                Text("Order matters! Select the card you played in the left hand box in game first! 1st -> 2nd -> 3rd")
+                                    .font(.title3)
+                                    .fontWeight(.heavy)
+                                    .multilineTextAlignment(.center)
+                                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 380, height: 120)
+                                    .foregroundColor(.white)
+                                    .background(.gray)
+                                    .cornerRadius(50)
+                               
+                                GifImage("selectcards")
+                                        .frame(width: 400, height: 150)
+                                
+                               Spacer()
+                               Spacer()
+                               
+                            }
+                        }//page 4
+                        ZStack{
+                            Image("skybackground")
+                                .resizable(resizingMode: .stretch)
+                                .edgesIgnoringSafeArea(.all)
+                                .opacity(1.0)
+                            Image("body")
+                                .resizable()
+                                .frame(width: 200, height:400)
+                            VStack{
+                                Text("")
+                                Text("")
+                                Text("")
+                                HStack{
+                                    Image(systemName: "hand.draw.fill").imageScale(.large)
+                                        .foregroundColor(.white)
+                                    Text("You can scroll to view your deck!")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                        .frame(width: 300, height: 120)
+                                        .foregroundColor(.white)
+                                        .rotationEffect(Angle(degrees: -4))
+                                    Image(systemName: "hand.draw.fill").imageScale(.large)
+                                        .foregroundColor(.white)
+                                }
+                                    GifImage("scrollview")
+                                        .frame(width: 400, height: 150)
+                                
+                               Spacer()
+                               
+                            }
+                        }
+                        ZStack{
+                            Image("skybackground")
+                                .resizable(resizingMode: .stretch)
+                                .edgesIgnoringSafeArea(.all)
+                                .opacity(1.0)
+                            Image("body")
+                                .resizable()
+                                .frame(width: 200, height:400)
+                            VStack{
+                                Text("")
+                                Text("")
+                                Text("")
+                                HStack{
+                                    Image(systemName: "hand.tap.fill").imageScale(.large)
+                                        .foregroundColor(.white)
+                                    Text("Select your played card for the turn")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                        .frame(width: 300, height: 120)
+                                        .foregroundColor(.white)
+                                        .rotationEffect(Angle(degrees: -4))
+                                    Image(systemName: "hand.tap.fill").imageScale(.large)
+                                        .foregroundColor(.white)
+                                }
+                                Spacer()
+
+                                Text("Cooldown")
+                                    .font(.title3)
+                                    .fontWeight(.heavy)
+                                    .multilineTextAlignment(.center)
+                                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 380, height: 90)
+                                    .foregroundColor(.white)
+                                    .background(.gray)
+                                    .cornerRadius(50)
+                               
+                                GifImage("cooldown")
+                                        
+                                
+                               Spacer()
+                               Spacer()
+                               
+                            }
+                        }
+                        ///
+                    }
+                        .tabViewStyle(PageTabViewStyle())
+                       .edgesIgnoringSafeArea(.vertical)
+                                   , label: {
                         Text("How to use")
                             .font(.title2)
                             .fontWeight(.heavy)
@@ -1340,19 +1930,27 @@ struct HomePage: View {
                             ScrollView(.vertical, showsIndicators: true) {
                                 Group{
                                     Text("App fully built by:")
-                                    Text("Manhoo")
+                                    Text("Coff3ee")
+                                    Text("")
+                                    Text("This App doesn't collect or store any form of private data from the user. Apple might collect data while using our Apps. More details about that is found in the Privacy Policies by Apple.")
                                     Text("")
                                     Text("")
                                 }
                                 Group{
+                                    
+                                    Text("Words from the developer:")
+                                        .font(.title3)
+                                        .foregroundColor(Color.purple)
                                     
                                     Text("      Thank you for using this app and supporting new developers.")
                                     Text("")
                                     Text("")
-                                    Text("")
                                     
                                 }
                                 Group{
+                                    Text("This is my first app ever built and I hope you find it useful.")
+                                    Text("")
+                                    Text("")
                                     Text("Special thanks to two youtube channels: ")
                                     Text("@twostraws @CodeWithChris")
                                     Text("They provided great Swift (IOS app coding language) tutorials.")
@@ -1360,16 +1958,33 @@ struct HomePage: View {
                                     Text("")
                                     Text("")
                                     Text("")
+                                }
+                                Group{
+                                    Text("Check out the Facebook page (door at the bottom!)")
+                                    Text("You can:")
+                                    Text("- find the background codes used in the main logic of this app")
+                                    Text("- direct message me")
+                                    Text("- suggest new features")
                                     Text("")
                                     Text("")
                                     Text("")
+                                    Text("Next function to be added:")
+                                    Text("Card creator: create your own card!")
+                                    
+                                    
+                                    
+                                }
+                                Group{
+                                    Text("")
+                                    Text("")
+                                    Text("Thank you!")
                                 }
                             }.foregroundColor(.black)
                                 .background(Color(hue: 0.553, saturation: 0.147, brightness: 0.665))
                                 .cornerRadius(12)
                             
-                            Link(destination: URL(string:"https://paypal.me/coff3eechau")!) {
-                                Text("Donate to the developer")
+                            Link(destination: URL(string:"https://www.facebook.com/coff3eechau/")!) {
+                                Text("Go to Facebook Page - Coff3eeChau")
                                     .bold()
                                     .frame(width: 280, height: 50)
                                     .foregroundColor(.black)
@@ -1380,7 +1995,7 @@ struct HomePage: View {
                         }
                         
                     }, label: {
-                        Text("Credits")
+                        Text("Privacy Policy & Credits")
                             .font(.title3)
                             .fontWeight(.medium)
                             .foregroundColor(Color.gray)
